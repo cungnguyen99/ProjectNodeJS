@@ -1,0 +1,88 @@
+extends ../layout/common 
+block link
+        link(rel='stylesheet', type='text/css', href='../styles/products.css')
+        link(href='https://fonts.googleapis.com/css?family=Montserrat&display=swap', rel='stylesheet')
+block content
+    body
+      .header
+        header
+          .container-fluid
+            .nav_wrap.d-flex.flex-row.justify-content-between
+              .logo
+                img(src='/images/logo-inverse-133x19.png', alt='')
+              form(action="/product/search", method='GET')
+                input(type="text" placeholder="Search for name movies" name="name")
+                button.btn
+                  i.fas.fa-search
+            h3 FILMS PRODUCTION  
+            .frame
+              h3 
+                span OURS 
+                span(style="color: #f44d32") FIMLS 
+              p Enjoy Emovies with a alot of fun
+            a.btn_create(href='/product/create') Create film
+            .text-scroll-arrow
+              p SCROLL DOWN
+              i.fas.fa-long-arrow-alt-down
+      .container
+        .judul
+          .tille_bar
+            h2.mt-5 LIST MOVIE WATCH
+      .wrapper_products
+        if films
+          each val, index in films
+            .container.shoe
+              .icon_heart
+                i.fas.fa-heart
+              .productImage.shoeImg(style="background-image:url(/"+val.image[0]+")")
+              .size.shoeSize
+                h4 YEAR
+                ul
+                  li 2
+                  li 0
+                  li 1
+                  li 9
+              .price.shoePrice
+                h4 PRICE
+                span $150
+              .color.shoeColor
+                h4 COLORS
+                ul
+                  li
+                    span.blue
+                  li
+                    span.yellow
+                  li
+                    span.red
+              .productName.shoeName=val.name
+              .content__down
+                .container
+                  .row.d-flex
+                    .col-md-7
+                      .stars  
+                        i.fas.fa-star
+                        p=val.imdb
+                    .col-md-5
+                      .btn-view
+                        a.btn.btn-send(href='/product/'+val.id) View data
+                          i.fas.fa-arrow-right
+      #pagination
+        .nav-pagination
+          ul.pagination
+            li.page-item
+              a.page-link(href='/product?page='+(page-1), id="pre" aria-label='Previous')
+                  span(aria-hidden='true') PREV
+                  span.sr-only Previous
+            if products
+              each val in products
+                li.page-item
+                  a.page-link(href='/product?page='+val)=val
+              li.page-item
+                a.page-link(href='/product?page='+(page+1), aria-label='Next')
+                    span(aria-hidden='true') NEXT
+                    span.sr-only Next
+
+
+
+
+

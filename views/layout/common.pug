@@ -1,0 +1,102 @@
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin='anonymous')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css')
+        link(href='https://fonts.googleapis.com/css?family=Montserrat&display=swap', rel='stylesheet')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css')
+        link(rel='stylesheet', type='text/css', href='../styles/common.css')
+        block link
+
+    body 
+        nav.nav
+            .burger
+                .burger__patty
+            ul.nav__list.nav__list--hidden
+                li.nav__item
+                    a.nav__link(href='/', title="home" style='color: #5fc7ea;')
+                        i.fa.fa-camera-retro
+                li.nav__item
+                    a.nav__link.scrolly(href='/product',title="product", style='color: #e6d068;')
+                        i.fa.fa-bolt
+                li.nav__item
+                    a.nav__link(href='/product/create',title="create product" style='color: #e68568;')
+                        i.fa.fa-music
+                li.nav__item
+                    a.nav__link(href='/auth/login',title="sign in" style='color: #68e6ac;')
+                        i.fa.fa-paper-plane
+                li.nav__item
+                    a.nav__link(href='/users/create', title="create account " style='color: #636e75;')
+                        i.fas.fa-guitar
+            if user 
+                p=user.name
+        block content
+
+        footer
+            .container
+                .row
+                    .col-md-4
+                        p Userful Links
+                        ul
+                            li
+                                a(href='') News
+                            li
+                                a(href='') About
+                            li
+                                a(href='') Team
+                            li
+                                a(href='') EMovies App
+                    .col-md-5
+                        p Categories
+                        .row
+                            .col-md-6
+                                ul
+                                    li
+                                        a(href='') News
+                                    li
+                                        a(href='') About
+                                    li
+                                        a(href='') Team
+                                    li
+                                        a(href='') Team
+                            .col-md-6
+                                ul
+                                    li
+                                        a(href='') About
+                                    li
+                                        a(href='') Team
+                                    li
+                                        a(href='') Team
+                    .col-md-3
+                        p Get in Touch
+                        ul
+                            li
+                                a(href='') News
+                            li
+                                a(href='') About
+                            li
+                                a(href='') Team
+            .container.content-down
+                .row.d-flex.flex-lg-row.flex-column.justify-content-center.align-items-center
+                    .col-md-4.align-self-center
+                        img(src='/images/logo-inverse-133x19.png', alt='')
+                    .footer_text.col-md-5
+                        p &copy;  2020 . All rights reserved. Privacy Policy
+                    .logo_social.col-md-3
+                        i.fab.fa-facebook-square.m-3(style='color: #3b5998')
+                        i.fab.fa-instagram.m-3(style='color: #E1306C;')
+                        i.fab.fa-twitter.m-3(style='color: #00acee')
+                        i.fab.fa-youtube.m-3(style='color: #c4302b')
+        script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
+        script
+            include ../script.js
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js', type='text/javascript')
+
+

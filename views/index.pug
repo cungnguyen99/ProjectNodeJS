@@ -1,0 +1,212 @@
+extends ./layout/common 
+block link
+    link(rel='stylesheet', type='text/css', href='../styles/styles.css')
+block content
+    .slidewrapper
+        .cacslide
+            ul.wrapper_li
+                li.active
+                    .motslide
+                        .container
+                            .row
+                                .col-md-6.content_header_col_1
+                                    ul
+                                        li USA
+                                        li MAR 21, 2019
+                                        li IMDB: 5.8/10
+                                    h1
+                                        | Wonder 
+                                        br
+                                        |  Park
+                                    p
+                                        | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum, dolor sit
+                                        | amet consectetur adipisicing elit.
+                                    .button_custom
+                                        a(href='') Watch now
+                                .col-md-6.content_header_col_2
+                                    .anh(style="background-image:url('../images/index-img-04-356x412.jpg');")
+                                    .frame_background_first
+                                    .frame_background
+                                    .image_tille
+                                        span ACTION
+                li
+                    .motslide
+                        .container
+                            .row
+                                .col-md-6.content_header_col_1
+                                    ul
+                                        li USA
+                                        li MAR 21, 2019
+                                        li IMDB: 5.8/10
+                                    h1
+                                        | Wonder 
+                                        br
+                                        |  Park
+                                    p
+                                        | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum, dolor sit
+                                        | amet consectetur adipisicing elit.
+                                    .button_custom
+                                        a(href='') Watch now
+                                .col-md-6.content_header_col_2
+                                    .anh(style="background-image:url('../images/index-img-05-356x412.jpg')")
+                                    .frame_background_first
+                                    .frame_background
+                                    .image_tille
+                                        span ACTION
+                li
+                    .motslide
+                        .container
+                            .row
+                                .col-md-6.content_header_col_1
+                                    ul
+                                        li USA
+                                        li MAR 21, 2019
+                                        li IMDB: 5.8/10
+                                    h1
+                                        | Wonder 
+                                        br
+                                        |  Park
+                                    p
+                                        | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum, dolor sit
+                                        | amet consectetur adipisicing elit.
+                                    .button_custom
+                                        a(href='') Watch now
+                                .col-md-6.content_header_col_2
+                                    .anh(style="background-image:url('../images/index-img-06-356x412.jpg')")
+                                    .frame_background_first
+                                    .frame_background
+                                    .image_tille
+                                        span ACTION
+        .chuyensilde
+            ul
+                li.kichhoat 1
+                li 2
+                li 3
+    section.popular_movies.section_padding
+        .pm_heading_text.text-center
+            h2 Popular Movies
+            p.p-long Here are some of the most popular movies that our users &amp; viewers enjoy.
+        .container
+            .owl-carousel.owl-theme
+                if films
+                    each val, index in films
+                        .item
+                            img.img__carousel(src=val.image[0], alt='')
+                            .info_fiml.text-white
+                                h3.fiml_name
+                                    a(href='/product/'+val.id)=val.name
+                                .info-content.mt-3.d-flex.align-self-center
+                                    span
+                                        i.fas.fa-calendar-day
+                                    span.product_year.mr-2=val.manufacture_year+',  '+val.genre
+    section.trending_tv.section_padding
+        .pm_heading_text.text-center
+            h2 Trending TV Shows
+            p.p-long Here are some of the most popular movies that our users &amp; viewers enjoy.
+        .container
+            .owl-carousel.owl-theme
+                if showTV
+                    each val in showTV
+                        .item
+                            img.img__carousel(src=val.image[0], alt='')
+                            .info_fiml.text-white
+                                h3.fiml_name
+                                    a(href='/product/'+val.id)=val.name
+                                i.fas.fa-calendar-day
+                                h6.product_year(style='display: inline-block;')=val.manufacture_year
+                                h6.category=val.genre
+    section.popular_categories.section_padding
+        .container
+            .row.d-flex
+                .col-md-8
+                    .container
+                        .row
+                            if popularCategories
+                                each val in popularCategories
+                                    .col-md-6.mb-4.destination-1-image
+                                        a(href="")
+                                            img.img-fluid(src=val.image[1], alt='')
+                                            p.theme_img Marvel
+                .col-md-4
+                    .content-text-popular
+                        h2 Popular Categories
+                        p All content at EMovies is divided into several categories that helps you to easily navigate between them and find what you like.
+                        .button_custom
+                            a(href='/product') View All
+    section.gallery_image
+        .pm_heading_text.text-center
+            h2 Gallery Images
+            p.p-long Here are some of the most popular movies that our users &amp; viewers enjoy.
+        .container-fluid
+            .wrapper
+                .slider_site_left.prs_vp_left_slidebar_wrapper
+                    .slider
+                        div
+                            img(src='../images/vp1.jpg')
+                        div
+                            img(src='../images/vp2.jpg')
+                        div
+                            img(src='../images/vp3.jpg')
+                        div
+                            img(src='../images/vp4.jpg')
+                        div
+                            img(src='../images/vp5.jpg')
+                        div
+                            img(src='../images/vp6.jpg')
+                .slider_center.prs_vp_center_slidebar_wrapper
+                    .slider
+                        div
+                            img(src='../images/vp7.jpg')
+                        div
+                            img(src='../images/vp7.jpg')
+                        div
+                            img(src='../images/vp7.jpg')
+                        div
+                            img(src='../images/vp7.jpg')
+                        div
+                            img(src='../images/vp7.jpg')
+                        div
+                            img(src='../images/vp7.jpg')
+                .slider_site_right.prs_vp_right_slidebar_wrapper
+                    .slider
+                        div
+                            img(src='../images/vp1.jpg') 
+                        div
+                            img(src='../images/vp2.jpg')
+                        div
+                            img(src='../images/vp3.jpg')
+                        div
+                            img(src='../images/vp4.jpg')
+                        div
+                            img(src='../images/vp5.jpg')
+                        div
+                            img(src='../images/vp6.jpg')
+    section.testimonials
+        .pm_heading_text.text-center
+            h2 Testimonial
+        .container
+            .row
+                .col-md-3
+                    img.img-hover(src="../images/home-2-8.jpg", alt="")
+                    blockquote.testimonial Taylor Alison Swift is an American singer-songwriter.
+                        cite
+                            img(src='https://assets.vogue.com/photos/58bd86fe3bbebb17ef1a6027/master/pass/00-square-emma-watson-feminist.jpg', alt='Emma')
+                            |Emma Watson
+                .col-md-3
+                    img.img-hover(src="../images/home-2-9.jpg", alt="")
+                    blockquote.testimonial Taylor Alison Swift is an American singer-songwriter.
+                        cite
+                            img(src='https://assets.vogue.com/photos/58bd86fe3bbebb17ef1a6027/master/pass/00-square-emma-watson-feminist.jpg', alt='Emma')
+                            |Emma Watson
+                .col-md-3
+                    img.img-hover(src="../images/home-2-10.jpg", alt="")
+                    blockquote.testimonial Taylor Alison Swift is an American singer-songwriter.
+                        cite
+                            img(src='https://assets.vogue.com/photos/58bd86fe3bbebb17ef1a6027/master/pass/00-square-emma-watson-feminist.jpg', alt='Emma')
+                            |Emma Watson
+                .col-md-3
+                    img.img-hover(src="../images/home-2-11.jpg", alt="")
+                    blockquote.testimonial Taylor Alison Swift is an American singer-songwriter.
+                        cite
+                            img(src='https://assets.vogue.com/photos/58bd86fe3bbebb17ef1a6027/master/pass/00-square-emma-watson-feminist.jpg', alt='Emma')
+                            |Emma Watson
