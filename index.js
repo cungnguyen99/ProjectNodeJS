@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config(); 
 console.log(process.env.MyDarling);
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -11,7 +11,7 @@ var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true,useUnifiedTopology: true } )
 
 const app = express()
-const port = 3000;
+const port = process.env.port||3000;
 var userRoute = require('./routes/users.route')
 var authRoute = require('./routes/auth.route')
 var transferRoute = require('./routes/transfer.route')
